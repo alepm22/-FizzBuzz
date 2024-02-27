@@ -1,15 +1,29 @@
-import sumar from "./sumador";
+import { generarSecuenciaFizzBuzz } from "./fizzbuzz.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
-
-form.addEventListener("submit", (event) => {
+document.getElementById("fizzbuzz-form").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const numeroInput = document.getElementById("numero");
+  const secuenciaDiv = document.getElementById("secuencia-div");
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  if (!numeroInput) {
+    console.error("Elemento con id 'numero' no encontrado.");
+    return;
+  }
+
+  if (!secuenciaDiv) {
+    console.error("Elemento con id 'secuencia-div' no encontrado.");
+    return;
+  }
+
+  const numeroIngresado = parseInt(numeroInput.value);
+
+  if (isNaN(numeroIngresado)) {
+    console.error("Ingrese un número válido.");
+    return;
+  }
+
+  const secuenciaFizzBuzz = generarSecuenciaFizzBuzz(numeroIngresado);
+
+  secuenciaDiv.innerHTML = secuenciaFizzBuzz.join(", ");
 });

@@ -1,16 +1,15 @@
 function generarfizzbuzz(n) {
-
   let mensaje = "";
-  if(n % 3==0){
-      mensaje = "fizz";
   
-  }else {
-      if(n % 5==0){
-          mensaje = "Buzz";
-      }else{
-          mensaje = n +"";
-      }
-      }
-      return mensaje;
+  if (n % 3 === 0) {
+    mensaje += "Fizz";
   }
-    export default generarfizzbuzz;
+
+  if (n % 5 === 0) {
+    mensaje += "Buzz";
+  }
+
+  return mensaje || n.toString();
+}
+
+export default generarfizzbuzz;
