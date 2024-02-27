@@ -25,5 +25,5 @@ document.getElementById("fizzbuzz-form").addEventListener("submit", function (ev
 
   const secuenciaFizzBuzz = generarSecuenciaFizzBuzz(numeroIngresado);
 
-  secuenciaDiv.innerHTML = secuenciaFizzBuzz.join(", ");
+  secuenciaDiv.innerHTML = secuenciaFizzBuzz;
 });
