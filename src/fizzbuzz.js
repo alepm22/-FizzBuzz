@@ -1,5 +1,3 @@
-// fizzbuzz.js
-
 export function generarFizzBuzzNumero(numero) {
   const esMultiploDe3 = numero % 3 === 0;
   const esMultiploDe5 = numero % 5 === 0;
